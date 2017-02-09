@@ -42,7 +42,7 @@ def create_matrix(lx,ly):
         matrix.append([(lx[i],el) for el in ly])
     return matrix
 
-if __name__=="__main__":
+def main():
     gmaps = googlemaps.Client(key=keys[2])
     point=(float(sys.argv[1]),float(sys.argv[2])) 
    # lx, ly = generate_arrays(tuple(gmaps.geocode("Ligota Ksiazeca 11a")[0]['geometry']['location'].values()))
@@ -76,3 +76,6 @@ if __name__=="__main__":
         for j in range(img.size[1]):
             pixels[i,j] = normalized_matrix[-(j+1)][i]
     img.save('/home/kgacek/image3.bmp')
+
+if __name__=="__main__":
+    main()
